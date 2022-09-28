@@ -8,13 +8,18 @@
     <link rel="stylesheet" href="EtchASketchStyle.css"></link>
 </head>
 <body id="Whole-Page">
+    <div id="EtchTitle">Etch-A-Sketch</div>
+    <div id="ButtonContainer">
+        <button class="buttons" id="BlackWhiteButton">Black and White</button>
+        <button class="buttons" id="ShadeButton">Shading</button>
+        <button class="buttons" id="RainbowButton">Rainbow</button>
+        <button class="buttons" id="ClearButton">Clear</button>
+    </div>
     <div class="slideContainer">
         <input type="range" min="1" max="21" value="7" class="slider" id="slideRange" onchange="change()"> 
         <span id="result"></span>
     </div>
-    <div id="container">
-        
-    </div> 
+    <div id="container"></div> 
 <script src="EtchASketchScript.js"></script>
 </body>
 </html>
