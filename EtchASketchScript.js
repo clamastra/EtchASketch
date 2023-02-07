@@ -71,6 +71,25 @@ container.addEventListener("mouseover", function(e) {
     if (CurrentColor === "BlackandWhite") {
         e.target.style.backgroundColor = "black";
     } else if (CurrentColor === "Shading") {
+        var ShadeID = e.target.getAttribute("id");
+        var NumShadeID = Number(ShadeID);
+        if (NumShadeID === 10) {}
+        else {
+            e.target.style.backgroundColor = colorArray[NumShadeID+1]
+            e.target.removeAttribute("id");
+            e.target.setAttribute("id",(NumShadeID+1).toString());
+        }
+    } else if (CurrentColor === "Rainbow") {
+        e.target.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+    }
+});
+
+
+/*
+container.addEventListener("mouseover", function(e) {
+    if (CurrentColor === "BlackandWhite") {
+        e.target.style.backgroundColor = "black";
+    } else if (CurrentColor === "Shading") {
         if (e.target.getAttribute("id") === "0") {
             e.target.style.backgroundColor = colorArray[1];
             e.target.removeAttribute("id");
@@ -116,6 +135,6 @@ container.addEventListener("mouseover", function(e) {
         e.target.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
     }
 });
-
+*/
 MakeSquare();
 result.innerText = eligibleSquares[slideRange.value-1];
